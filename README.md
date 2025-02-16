@@ -151,6 +151,7 @@ La aplicación de **Streamlit** permite a los usuarios interactuar con la API de
 
 Así deberás ver la interfaz:
 
-![alt text](image.png)
+![image](https://github.com/user-attachments/assets/eb791f28-e0fa-4ad7-ba9f-ca0816f66daf)
+
 
 ---
