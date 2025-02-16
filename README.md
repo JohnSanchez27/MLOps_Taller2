@@ -133,7 +133,7 @@ Se han entrenado cuatro modelos de Machine Learning:
 - ✅ **Perceptrón Multicapa (modelo4)**
 
 Estos modelos han sido entrenados utilizando el dataset de pingüinos y evaluados con una partición de datos de entrenamiento y prueba, Sin embargo como se estan utilizando volumenes
-se entrenaron 4 modelos adicionales con el fin de garantizar que se puedan agregar mas modelos y que la APP los pueda consumir. 
+se entrenaron 3 modelos adicionales con el fin de garantizar que se puedan agregar mas modelos y que la APP los pueda consumir sin ningun problema. 
 
 - ✅ **Árbol de Decisión (modelo22)**
 - ✅ **Random Forest o Bosque Aleatorio (modelo23)**
