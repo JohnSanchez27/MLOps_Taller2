@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  api_back:
+    build:
+      context: ./app_back
+      dockerfile: Dockerfile # Dockerfile específico para el API
+    ports:
+      - "8000:8000"
+    tty: true
+    volumes:
+      - './models_volume:/app/models'
+    # Inicia el servidor FastAPI con uvicorn
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
+
+  api_front:
+    build:
+      context: ./app_front
+      dockerfile: Dockerfile # Dockerfile específico para el API
+    ports:
+      - "8501:8501"
+    volumes:
+      - './models_volume:/app/models'
+    # Inicia el servidor FastAPI con uvicorn
+    command: streamlit run app_streamlit.py --server.port 8501 --server.address 0.0.0.0
+
+  jupyter:
+      build:
+        context: ./jupyter
+        dockerfile: Dockerfile  # Dockerfile para el entorno de desarrollo con JupyterLab
+      ports:
+        - "8888:8888"
+      volumes:
+        - './models_volume:/app/models'
+      # Inicia JupyterLab
+      command: jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root
+
+volumes:
+  models_volume:
