@@ -1,4 +1,4 @@
-# Predicción de Especies de Pingüinos con FastAPI y Streamlit
+# Predicción de Especies de Pingüinos con Jupyter, FastAPI y Streamlit
 
 ## 📌 Descripción del Proyecto
 
@@ -52,6 +52,33 @@ Esto iniciará la API en el puerto **8989** y la interfaz de Streamlit en el pue
 
 ---
 
+### 4️⃣ Uso de JupyterLab
+
+JupyterLab proporciona un entorno interactivo donde puedes analizar datos, entrenar modelos y guardarlos en la carpeta models. Para trabajar con JupyterLab:
+
+➕ Crear un Nuevo Notebook
+
+Accede a http://localhost:8888
+
+En el panel lateral izquierdo, selecciona la carpeta notebooks.
+
+Haz clic en New y selecciona Python 3 Notebook.
+
+📂 Guardar Modelos en la Carpeta models
+
+Si entrenas un modelo en Jupyter y deseas que FastAPI lo cargue automáticamente, sigue estos pasos:
+
+```python
+import joblib
+
+# Entrenar y guardar el modelo
+modelo = ... # Define tu modelo aquí
+joblib.dump(modelo, "/models/nuevo_modelo.pkl")
+
+```
+
+FastAPI reconocerá automáticamente el nuevo modelo y podrá usarlo para predicciones.
+
 ## 📂 Estructura del Proyecto
 
 La estructura del proyecto está organizada en diferentes directorios para separar los servicios y recursos. app_back contiene el código de la API backend con FastAPI, 
@@ -87,6 +114,7 @@ Taller_2/
 │   │── modelo22.pkl
 │   │── modelo23.pkl
 │   │── modelo24.pkl
+│   │── nuevo_modelo.pkl  # Modelos nuevos creados en Jupyter
 │
 │── docker-compose.yml
 ```
@@ -132,12 +160,13 @@ Se han entrenado cuatro modelos de Machine Learning:
 - ✅ **Naive Bayes (modelo3)**
 - ✅ **Perceptrón Multicapa (modelo4)**
 
-Estos modelos han sido entrenados utilizando el dataset de pingüinos y evaluados con una partición de datos de entrenamiento y prueba, Sin embargo como se estan utilizando volumenes
-se entrenaron 3 modelos adicionales con el fin de garantizar que se puedan agregar mas modelos y que la APP los pueda consumir sin ningun problema. 
+Estos modelos han sido entrenados utilizando el dataset de pingüinos y evaluados con una partición de datos de entrenamiento y prueba; Sin embargo, como se estan utilizando volumenes compartidos, se entrenaron 3 modelos adicionales con el fin de garantizar que se puedan agregar mas modelos y que la APP los pueda consumir sin ningun problema. 
 
 - ✅ **Árbol de Decisión (modelo22)**
 - ✅ **Random Forest o Bosque Aleatorio (modelo23)**
 - ✅ **Gradient Boosting (modelo24)**
+
+Cómo se explicó en la sección anterior, usted también puede crear nuevos modelos o eliminar existentes.
   
 ---
 
