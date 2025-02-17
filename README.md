@@ -25,8 +25,8 @@ Adicionalmente, Este proyecto cuenta con tres servicios principales: un backend 
 
 ### 1️⃣ Clonar el Repositorio
 ```bash
- git clone <git@github.com:JohnSanchez27/MLOps_Taller2.git>
- cd <ml_deploy_fastapi/app/backend>
+ git clone git@github.com:JohnSanchez27/MLOps_Taller2.git
+ cd MLOps_Taller2
 ```
 
 ### 2️⃣ Construir y Ejecutar el Contenedor Docker
